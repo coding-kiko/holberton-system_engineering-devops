@@ -1,2 +1,2 @@
 #!/bin/bash
-du | ls -alR | wc -l
+du | sort | wc -l
