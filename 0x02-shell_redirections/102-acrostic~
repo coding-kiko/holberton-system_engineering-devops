@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "$(cat test | cut -c-1 | tr -d '\n')"
