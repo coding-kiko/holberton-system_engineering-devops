@@ -4,11 +4,10 @@
 let c=0
 while ((c<10))
 do
-	if ((c==8))
-	   then
-		echo "Hi"
-	else
-		echo "Holberton School"
-	fi
-   	((c++))
+    echo "Holberton School"
+    if ((c==8))
+          then
+	      echo "Hi"
+    fi
+    ((c++))
 done
