@@ -7,8 +7,7 @@ do
 	if ((c==3))
 	   then
 		echo "bad luck"
-	fi
-	if ((c==7))
+	elif ((c==7))
 	   then
 		echo "good luck"
 	else
