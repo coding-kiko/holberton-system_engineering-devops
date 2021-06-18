@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#cut cat pim pw
+
+input="/etc/passwd"
+
+while IFS= read -r line
+do
+	echo "$line" | cut -d ":" -f-1,3,6
+done < "$input"
