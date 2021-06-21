@@ -2,4 +2,4 @@
 #Show bash pids
 # shellcheck disable=SC2009
 
-ps -Hua | grep bash
+ps -H aux | grep bash
