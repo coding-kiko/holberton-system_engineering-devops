@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #list current processes
 
-ps -Huax
+ps -H aux
