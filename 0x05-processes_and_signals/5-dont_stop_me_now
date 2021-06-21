@@ -1,4 +1,4 @@
 #/usr/bin/env bash
 #kill a process
 
-kill SIGINT bash
+kill SIGINT "$"{pgrep -f ./4-to_infinity_and_beyond}""
