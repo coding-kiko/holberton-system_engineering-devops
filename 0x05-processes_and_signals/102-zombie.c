@@ -5,6 +5,7 @@
 
 /**
  * infinite_while - jjjajajaja
+ * Return: 0
  */
 
 int infinite_while(void)
@@ -18,6 +19,7 @@ return (0);
 
 /**
  * main - jjjajajaja
+ * Return: 1
  */
 
 int main(void)
@@ -31,7 +33,7 @@ child_pid = fork ();
 if (child_pid > 0)
 {
 sleep (1);
- printf("Zombie process created, PID: %i\n", (int)child_pid);
+printf("Zombie process created, PID: %i\n", (int)child_pid);
 }
 else
 {
