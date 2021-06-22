@@ -22,7 +22,7 @@ int infinite_while(void)
  * Return: 1
  */
 
-int main(void)
+void main(void)
 {
 	pid_t c1, c2, c3, c4, c5;
 
@@ -31,35 +31,29 @@ int main(void)
 		printf("Zombie process created, PID: %d\n", c1);
 	else
 		exit(0);
+
 	c2 = fork();
 	if (c2 > 0)
 		printf("Zombie process created, PID: %d\n", c2);
 	else
 		exit(0);
+
 	c3 = fork();
 	if (c3 > 0)
 		printf("Zombie process created, PID: %d\n", c3);
 	else
-	{
 		exit(0);
-	}
+
 	c4 = fork();
 	if (c4 > 0)
-	{
 		printf("Zombie process created, PID: %d\n", c4);
-	}
 	else
-	{
 		exit(0);
-	}
+
 	c5 = fork();
 	if (c5 > 0)
-	{
 		printf("Zombie process created, PID: %d\n", c5);
-	}
 	else
-	{
 		exit(0);
-	}
 	infinite_while();
 }
