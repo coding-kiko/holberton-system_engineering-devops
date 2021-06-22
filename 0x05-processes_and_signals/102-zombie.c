@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /**
- * infinite_while - jjjajajaja
+ * infinite_while - infinite while
  * Return: 0
  */
 
@@ -18,27 +18,58 @@ int infinite_while(void)
 }
 
 /**
- * main - jjjajajaja
+ * main - main func
  * Return: 1
  */
 
 int main(void)
 {
-	pid_t child_pid;
-	int i = 0;
+	pid_t c1, c2, c3, c4, c5;
 
-	while (i <= 4)
+	c1 = fork();
+	if (c1 > 0)
 	{
-		child_pid = fork();
-		if (child_pid > 0)
-		{
-			printf("Zombie process created, PID: %i\n", (int)child_pid);
-		}
-		else
-		{
-			exit(0);
-		}
-		i++;
+		printf("Zombie process created, PID: %d\n", c1);
 	}
+	else
+	{
+		exit(0);
+	}
+	c2 = fork();
+        if (c2 > 0)
+        {
+                printf("Zombie process created, PID: %d\n", c2);
+        }
+        else
+        {
+                exit(0);
+        }
+	c3 = fork();
+        if (c3 > 0)
+        {
+                printf("Zombie process created, PID: %d\n", c3);
+        }
+        else
+        {
+                exit(0);
+        }
+	c4 = fork();
+        if (c4 > 0)
+        {
+                printf("Zombie process created, PID: %d\n", c4);
+        }
+        else
+        {
+                exit(0);
+        }
+	c5 = fork();
+        if (c5 > 0)
+        {
+                printf("Zombie process created, PID: %d\n", c5);
+        }
+        else
+        {
+                exit(0);
+        }
 	infinite_while();
 }
