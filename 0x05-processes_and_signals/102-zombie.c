@@ -32,7 +32,6 @@ int main(void)
 		child_pid = fork();
 		if (child_pid > 0)
 		{
-			sleep(1);
 			printf("Zombie process created, PID: %i\n", (int)child_pid);
 		}
 		else
