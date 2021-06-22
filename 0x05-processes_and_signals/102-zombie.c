@@ -25,7 +25,7 @@ int infinite_while(void)
 int main(void)
 {
 	pid_t child_pid;
-	int i;
+	int i = 0;
 
 	while (i <= 4)
 	{
