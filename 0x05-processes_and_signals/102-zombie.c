@@ -22,7 +22,7 @@ int infinite_while(void)
  * Return: 1
  */
 
-void main(void)
+int main(void)
 {
 	pid_t c1, c2, c3, c4, c5;
 
@@ -56,4 +56,5 @@ void main(void)
 	else
 		exit(0);
 	infinite_while();
+	return (0);
 }
