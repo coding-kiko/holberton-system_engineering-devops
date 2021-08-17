@@ -6,7 +6,7 @@ sudo apt-get -y install nginx
 sudo echo "Holberton School for the win!" > /var/www/html/index.nginx-debian.html
 sudo touch redirect_me.html
 sudo echo "301 Moved Permanently" > /var/www/html/redirect-me.html
-new="rewrite ^/redirect_me/ https://intranet.hbtn.io/projects/266 permanent;"
+new="rewrite ^/redirect_me/ https://stackoverflow.com/questions/26041088/sed-replace-line-with-multiline-variable permanent;\n"
 sudo sed -i "/server_name _/a $new" /etc/nginx/sites-available/default
 
 sudo service nginx restart
