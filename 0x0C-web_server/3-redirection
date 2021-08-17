@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# redirect permanently
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo echo "Holberton School for the win!" > /var/www/html/index.nginx-debian.html
+sudo touch redirect_me.html
+sudo echo "301 Moved Permanently" > /var/www/html/redirect-me.html
+printf "server {
+               listen 80;
+               listen [::]:80;
+
+               server_name _;
+
+               return 301 redirect_me;
+
+               root /var/www/html;
+               redirect_me.html index.nginx-debian.html;
+
+               location / {
+                       try_files $uri $uri/ =404;
+               }
+        }\n" > /etc/nginx/sites-available/default
+
+sudo service nginx restart
