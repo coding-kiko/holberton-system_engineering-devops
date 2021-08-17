@@ -6,6 +6,6 @@ sudo apt-get -y install nginx
 sudo echo "Holberton School for the win!" | sudo tee /var/www/html/index.nginx-debian.html
 sudo service nginx restart
 
-sudo sed -i "/server_name _/a rewrite ^/redirect_me/ https://stackoverflow.com/questions/26041088/sed-replace-line-with-multiline-variable permanent;\n" /etc/nginx/sites-available/default
+sudo sed -i "/server_name _/a rewrite ^/redirect_me/ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n" /etc/nginx/sites-available/default
 
 sudo service nginx restart
