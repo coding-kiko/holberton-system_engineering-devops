@@ -5,7 +5,7 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
 sudo service nginx restart
-sudo printf "server {
+printf "server {
 listen 80;
 listen [::]:80;
 server_name _;
@@ -13,6 +13,6 @@ rewrite ^/redirect_me/ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
 root /var/www/html;
 index.html index index.nginx-debian.html;
 location / {
-try_files $uri $uri/ =404;
+try_files \$uri \$uri/ =404;
 }\n" > /etc/nginx/sites-available/default
 sudo service nginx restart
