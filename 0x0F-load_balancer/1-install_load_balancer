@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# configuring haproxy for loadbalancer
+
+sudo apt-get -y update
+sudo apt-get install -y --no-install-recommends software-properties-common
+sudo add-apt-repository -y ppa:vbernat/haproxy-2.0
+sudo apt-get install -y haproxy=2.0.*
+
+echo "frontend coding-kiko.tech
+    bind *:80
+    mode http
+    default_backend My_Web_Servers" >> /etc/haproxy/haproxy.cfg
+echo "backend My_Web_Servers
+    balance roundrobin
+    server s1 35.196.27.66:80
+    server s2 35.243.197.246:80" check >> /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
