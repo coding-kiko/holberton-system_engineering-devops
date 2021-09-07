@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# create mysql dump
+mysqldump -uroot -p"$1" --all-databases > backup.sql
+
