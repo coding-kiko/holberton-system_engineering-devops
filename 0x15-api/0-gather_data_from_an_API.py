@@ -5,14 +5,18 @@ from sys import argv
 import requests
 
 id = int(argv[1])
-r = requests.get('https://jsonplaceholder.typicode.com/todos')
+r = requests.get('https://jsonplaceholder.typicode.com/todos').json()
+users = requests.get('https://jsonplaceholder.typicode.com/users').json()
 done = 0
 tasks = []
 total = 0
-j = r.json()
-name = "joaquin"
 
-for task in j:
+for user in users:
+    if user.get("id") == id:
+        name = user.get("name")
+        break
+
+for task in r:
     if task.get("userId") == id:
         if task.get("completed"):
             tasks.append(task.get("title"))
