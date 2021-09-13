@@ -4,7 +4,7 @@
 from sys import argv
 import requests
 
-id = argv[1]
+id = int(argv[1])
 r = requests.get('https://jsonplaceholder.typicode.com/todos')
 done = 0
 tasks = []
@@ -13,9 +13,6 @@ j = r.json()
 
 for task in j:
     if task.get("userId"):
-        print(task.get("userId"))
-        print(type(task.get("userId")))
-        break
         tasks.append(task.get("title"))
         if task.get("completed"):
             done += 1
