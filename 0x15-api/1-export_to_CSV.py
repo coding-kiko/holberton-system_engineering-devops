@@ -21,4 +21,5 @@ if __name__ == "__main__":
         w = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
         for task in r:
             if task.get("userId") == id:
-                w.writerow([argv[1], username, task.get("completed"), task.get("title")])
+                w.writerow([argv[1], username, task.get("completed"),
+                           task.get("title")])
