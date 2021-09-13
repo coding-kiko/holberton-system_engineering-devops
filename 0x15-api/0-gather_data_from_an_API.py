@@ -10,6 +10,7 @@ done = 0
 tasks = []
 total = 0
 j = r.json()
+name = "joaquin"
 
 for task in j:
     if task.get("userId") == id:
@@ -18,4 +19,6 @@ for task in j:
             done += 1
         total += 1
 
-print("{}  -   {}/{}".format(tasks, done, total))
+print("Employee {} is done with tasks({}/{}):".format(name, done, total))
+for task in tasks:
+    print("\t {}".format(task))
