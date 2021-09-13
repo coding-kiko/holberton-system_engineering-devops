@@ -20,5 +20,6 @@ for task in j:
         total += 1
 
 print("Employee {} is done with tasks({}/{}):".format(name, done, total))
+print(tasks)
 for task in tasks:
     print("\t {}".format(task))
