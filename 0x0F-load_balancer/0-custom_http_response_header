@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# redirect permanently
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sudo touch /var/www/html/custom_404.html
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+sudo chmod 777 /var/www/html/custom_404.html
+sudo service nginx restart
+sudo printf "server {
+listen 80;
+listen [::]:80;
+server_name _;
+rewrite ^/redirect_me/ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+root /var/www/html;
+index index.html index.nginx-debian.html;
+location / {
+add_header X-Served-By %s;
+error_page 404 /custom_404.html;
+try_files \$uri \$uri/ =404;
+}
+}\n" "$(eval hostname)" > /etc/nginx/sites-available/default
+sudo service nginx restart

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# 4 bad luck, 8 is your chance
+
+let c=0
+while ((c<10))
+do
+	if ((c==3))
+	   then
+		echo "bad luck"
+	elif ((c==7))
+	   then
+		echo "good luck"
+	else
+		echo "Holberton School"
+	fi
+	((c++))
+done

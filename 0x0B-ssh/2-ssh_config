@@ -1,0 +1,5 @@
+host 2789-web-01
+Hostname 35.243.197.246
+User ubuntu
+PubKeyAuthentication no
+IdentityFile ~/.ssh/holberton
