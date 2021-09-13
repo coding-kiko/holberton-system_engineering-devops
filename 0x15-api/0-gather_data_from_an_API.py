@@ -12,8 +12,8 @@ total = 0
 j = r.json()
 
 for task in j:
-    print(task)
     if task.get('userId') == id:
+        print(task)
         tasks.append(task.get('title'))
         if task.get('completed'):
             done += 1
