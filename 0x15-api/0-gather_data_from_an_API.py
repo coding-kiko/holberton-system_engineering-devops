@@ -10,7 +10,7 @@ done = 0
 tasks = []
 total = 0
 j = r.json()
-print(type(j[i].get("userId")))
+print(type(j[1].get("userId")))
 
 for task in j:
     if task.get('userId') == id:
