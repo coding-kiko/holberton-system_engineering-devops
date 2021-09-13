@@ -14,12 +14,11 @@ name = "joaquin"
 
 for task in j:
     if task.get("userId") == id:
-        tasks.append(task.get("title"))
         if task.get("completed"):
+            tasks.append(task.get("title"))
             done += 1
         total += 1
 
 print("Employee {} is done with tasks({}/{}):".format(name, done, total))
-print(tasks)
 for task in tasks:
     print("\t {}".format(task))
