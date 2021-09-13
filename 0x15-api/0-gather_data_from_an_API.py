@@ -9,8 +9,10 @@ r = requests.get('https://jsonplaceholder.typicode.com/todos')
 done = 0
 tasks = []
 total = 0
+j = r.json()
 
-for task in r.json():
+for task in j:
+    print(task)
     if task.get('userId') == id:
         tasks.append(task.get('title'))
         if task.get('completed'):
