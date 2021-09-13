@@ -17,7 +17,7 @@ for user in users:
         break
 
 with open(filename, mode='w') as f:
-    w = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    w = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
     for task in r:
         if task.get("userId") == id:
             w.writerow([argv[1], username, task.get("completed"), task.get("title")])
