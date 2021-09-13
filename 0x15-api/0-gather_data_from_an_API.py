@@ -6,5 +6,5 @@ import requests
 
 id = argv[1]
 
-r = requests.get('https://jsonplaceholder.typicode.com/todos')
+r = requests.post('https://jsonplaceholder.typicode.com/todos')
 print(r)
