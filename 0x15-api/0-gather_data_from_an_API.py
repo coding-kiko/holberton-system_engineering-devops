@@ -13,7 +13,9 @@ j = r.json()
 
 for task in j:
     if task.get("userId"):
-        print(task)
+        print(task.get("userId"))
+        print(type(task.get("userId")))
+        break
         tasks.append(task.get("title"))
         if task.get("completed"):
             done += 1
