@@ -7,4 +7,4 @@ import requests
 id = argv[1]
 
 r = requests.get('https://jsonplaceholder.typicode.com/todos')
-print(r.json())
+print(r.json()[0])
