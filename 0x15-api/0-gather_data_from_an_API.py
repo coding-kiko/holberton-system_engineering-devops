@@ -8,10 +8,13 @@ id = argv[1]
 r = requests.get('https://jsonplaceholder.typicode.com/todos')
 done = 0
 tasks = []
-print(type(r.json()[1].get("completed")))
-"""
+total = 0
+
 for task in r.json():
     if task.get('userId') == id:
         tasks.append(task.get('title'))
-        if task.get('completed') == "true"
-        """
+        if task.get('completed'):
+            done += 1
+        total += 1
+
+print("{}  -   {}/{}".format(tasks, done, total))
