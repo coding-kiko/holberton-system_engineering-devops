@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-#inifinite display
-
-while ((1 == 1))
-do 
-   echo "To infinity and beyond"
-   trap "echo I am invincible!!!" 15
-   sleep 2
-done

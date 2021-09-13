@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# generate rsa keys
-ssh-keygen -q -b 4096 -P "betty" -f "holberton"

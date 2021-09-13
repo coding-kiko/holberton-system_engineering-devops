@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-#stop process using pkill
-
-pkill -f bash
