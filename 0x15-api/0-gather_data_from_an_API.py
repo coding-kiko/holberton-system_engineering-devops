@@ -12,9 +12,7 @@ total = 0
 j = r.json()
 
 for task in j:
-    print(type(task))
-    break
-    if task.get("userId") == id:
+    if task.get("userId"):
         print(task)
         tasks.append(task.get("title"))
         if task.get("completed"):
