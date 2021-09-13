@@ -5,6 +5,14 @@ from sys import argv
 import requests
 
 id = argv[1]
-
 r = requests.get('https://jsonplaceholder.typicode.com/todos')
-print(r.json()[0])
+done = 0
+tasks = [task]
+print(type(r.json()[1].get("completed")))
+"""
+for task in r.json():
+    if task.get('userId') == id:
+        tasks.append(task.get('title'))
+        if task.get('completed') == "true"
+        """
+        
