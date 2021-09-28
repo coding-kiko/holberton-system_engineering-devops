@@ -13,13 +13,16 @@ def count_words(subreddit, word_list, pos=0, dict_count={}):
         return None
     try:
         for search in word_list:
-            if search.lower() in r.json()['data']['children'][pos]['data']['title'].lower().split():
+            a = r.json()['data']['children'][pos]['data']['title'].lower().split()
+            if search.lower() in a:
                 if search not in dict_count:
                     dict_count[search] = 1
                 else:
                     dict_count[search] += 1
     except IndexError:
-        for k in sorted(dict_count, key=dict_count.get, reverse=True):
+        value_sort = sorted(dict_count, key=dict_count.get, reverse=True)
+        key_sort = sorted(dict_count, key=dict_count, reverse=True)
+        for k in key_sort:
             print('{}: {}'.format(k, dict_count[k]))
         return
     return (count_words(subreddit, word_list, pos+1))
