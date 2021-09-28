@@ -12,9 +12,9 @@ def count_words(subreddit, word_list, pos=0, dict_count={}):
     if r.status_code != 200:
         return None
     try:
+        print(r.json()['data']['children'][pos]['data']['title'])
         for search in word_list:
             if search.lower() in r.json()['data']['children'][pos]['data']['title'].lower().split():
-                print(r.json()['data']['children'][pos]['data']['title'])
                 if search not in dict_count:
                     dict_count[search] = 1
                 else:
