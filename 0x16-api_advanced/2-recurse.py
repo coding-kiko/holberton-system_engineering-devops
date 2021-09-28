@@ -11,8 +11,8 @@ def recurse(subreddit, hot_list=[], pos=0):
                      allow_redirects=False)
     if r.status_code != 200:
         return None
-    if pos == (len(r.json()['data']['children']) - 1):
+    try:
+        hot_list.append(r.json()['data']['children'][pos])
+    except IndexError:
         return pos
-    hot_list.append(r.json()['data']['children'][pos])
-    pos += 1
-    recurse(subreddit, hot_list, pos)
+    return (1 + recurse(subreddit))
