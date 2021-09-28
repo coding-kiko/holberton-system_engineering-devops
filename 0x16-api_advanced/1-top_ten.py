@@ -13,7 +13,7 @@ def top_ten(subreddit):
         for title in r["data"]["children"]:
             print(title["data"]["title"])
             count += 1
-            if count == 10:
+            if count == 11:
                 break
     else:
         print("None")
