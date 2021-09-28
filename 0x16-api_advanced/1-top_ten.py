@@ -12,7 +12,8 @@ def top_ten(subreddit):
         count = 0
         for title in r["data"]["children"]:
             print(title["data"]["title"])
+            count += 1
             if count == 9:
                 break
     except:
-        return None
+        print("None")
