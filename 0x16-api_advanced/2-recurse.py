@@ -9,10 +9,10 @@ def recurse(subreddit, hot_list=[], pos=0):
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     r = requests.get(url, headers={'User-agent': 'your bot 0.1'},
                      allow_redirects=False)
-    print(len(r.json()['data']['children']))
-    """ if r.status_code != 200:
+    if r.status_code != 200:
         return None
+    if pos == (len(r.json()['data']['children']) - 1):
+        return pos
     hot_list.append(r.json()['data']['children'][pos])
     pos += 1
     recurse(subreddit, hot_list,)
- """
