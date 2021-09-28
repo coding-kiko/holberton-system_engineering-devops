@@ -16,5 +16,5 @@ def recurse(subreddit, hot_list=[], pos=0):
         print(hot_list)
         print('---------------------------------------------------------------------')
     except IndexError:
-        return pos
+        return hot_list
     return (recurse(subreddit, hot_list, pos + 1))
