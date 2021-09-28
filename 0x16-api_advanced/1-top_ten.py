@@ -8,7 +8,8 @@ def top_ten(subreddit):
     '''get top 10 hottest posts subreddit'''
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     r = requests.get(url, headers={'User-agent': 'your bot 0.1'}, allow_redirects=False)
-    print(r)
+    print(r.status_code)
+    print(type(r.status_code))
     """ if r["data"]["after"]:
         count = 0
         for title in r["data"]["children"]:
