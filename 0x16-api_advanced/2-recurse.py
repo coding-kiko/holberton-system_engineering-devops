@@ -15,4 +15,4 @@ def recurse(subreddit, hot_list=[], pos=0):
         return pos
     hot_list.append(r.json()['data']['children'][pos])
     pos += 1
-    recurse(subreddit, hot_list,)
+    recurse(subreddit, hot_list, pos)
