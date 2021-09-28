@@ -14,7 +14,7 @@ def count_words(subreddit, word_list, pos=0, dict_count={}):
     try:
         for search in word_list:
             print(search)
-            if search.lower() in r.json()['data']['children'][pos]['data']['title'].lower():
+            if search.lower() in r.json()['data']['children'][pos]['data']['title'].lower().split():
                 print(r.json()['data']['children'][pos]['data']['title'].lower())
                 if search not in dict_count:
                     dict_count[search] = 1
