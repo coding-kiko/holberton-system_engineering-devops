@@ -13,8 +13,6 @@ def recurse(subreddit, hot_list=[], pos=0):
         return None
     try:
         hot_list.append(r.json()['data']['children'][pos]['data']['title'])
-        print(hot_list)
-        print('---------------------------------------------------------------------')
     except IndexError:
         return hot_list
     return (recurse(subreddit, hot_list, pos + 1))
