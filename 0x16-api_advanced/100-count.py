@@ -20,9 +20,9 @@ def count_words(subreddit, word_list, pos=0, dict_count={}):
                 else:
                     dict_count[search] += 1
     except IndexError:
-        value_sort = sorted(dict_count, key=dict_count.get, reverse=True)
         key_sort = sorted(dict_count, key=dict_count, reverse=True)
-        for k in key_sort:
-            print('{}: {}'.format(k, dict_count[k]))
+        value_sort = sorted(key_sort, key=key_sort.get, reverse=True)
+        for k in value_sort:
+            print('{}: {}'.format(k, value_sort[k]))
         return
     return (count_words(subreddit, word_list, pos+1))
