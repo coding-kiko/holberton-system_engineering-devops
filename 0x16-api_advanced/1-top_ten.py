@@ -9,6 +9,7 @@ def top_ten(subreddit):
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     r = requests.get(url, headers={'User-agent': 'your bot 0.1'}, allow_redirects=False)
     if r.status_code == 200:
+        r = r.json()
         count = 0
         for title in r["data"]["children"]:
             print(title["data"]["title"])
