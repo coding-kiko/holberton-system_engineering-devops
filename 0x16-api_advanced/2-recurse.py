@@ -12,7 +12,7 @@ def recurse(subreddit, hot_list=[], pos=0):
     if r.status_code != 200:
         return None
     try:
-        hot_list.append(r.json()['data']['children'][pos])
+        hot_list.append(r.json()['data']['children'][pos]['title'])
         print(hot_list)
         print('---------------------------------------------------------------------')
     except IndexError:
