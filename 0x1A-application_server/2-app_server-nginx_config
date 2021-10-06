@@ -1,0 +1,22 @@
+server {
+       listen 80;
+       listen [::]:80;
+       server_name _;
+       rewrite ^/redirect_me/ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+       root /var/www/html;
+       index index.html index.nginx-debian.html;
+       location / {
+                add_header X-Served-By gc-2789-web-01-1628480136;
+                error_page 404 /custom_404.html;
+                try_files $uri $uri/ =404;
+       }
+       location /hbnb_static {
+                alias /data/web_static/current/;
+                error_page 404 /custom_404.html;
+                try_files $uri $uri/ =404;
+       }
+       location /airbnb-onepage/ {
+                 include proxy_params;
+                 proxy_pass http://localhost:5000/airbnb-onepage/;
+       }
+}
